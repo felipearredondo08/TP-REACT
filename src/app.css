@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /*   background-image: url('./assets/fondo.jpg');
+  background-size: cover;
+   background-position: center; */
+   background-color: aliceblue;
+  font-family: 'Arial', sans-serif;
+}
+
+h1{
+  color: black;
+  font-family: 'Fraunces', serif;
+font-family: 'Source Code Pro', monospace;
+
+
+
+}
+
+.app-wrapper {
+  
+  text-align: center;
+  margin-top: -300px;  /*asi subi las letras y el container hacia arriba */
+  
+}
+
+.app-content {
+  max-width: 600px;
+  margin: 0 auto;
+  
+}
+
+
