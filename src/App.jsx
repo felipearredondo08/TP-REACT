@@ -3,7 +3,7 @@ import TaskList from './components/Tasklist';
 import TaskForm from './components/Taskform';
 import './app.css';
 import Header from './components/Header';
-
+import '../src/components/taskitem.css';
 
 
 const App = () => {
@@ -27,23 +27,19 @@ const App = () => {
   };
 
   const handleDeleteTask = (taskId) => {
+    // Agregar la clase de animación antes de eliminar la tarea
     setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
+    // Puedes realizar otras tareas, como limpiar el local storage si es necesario
+  
+    
+    
   };
 
- const handleAddTask = (newTask) => {
-  setTasks((prevTasks) => [...prevTasks, newTask]);
-};
-
-
-
-
-
-
-
+  const handleAddTask = (newTask) => {
+    setTasks((prevTasks) => [...prevTasks, newTask]);
+  };
 
   return (
-
-
     <div className="app-wrapper">
       <Header />
       <div className="app-content">
@@ -57,10 +53,7 @@ const App = () => {
           onDeleteTask={handleDeleteTask}
         />
       </div>
-
-
     </div>
-   
   );
 };
 

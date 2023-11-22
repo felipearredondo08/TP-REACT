@@ -17,15 +17,19 @@ const TaskItem = ({ task, onCompleteTask, onDeleteTask }) => {
   };
 
   const handleDeleteClick = () => {
-    onDeleteTask(task.id);
+    // Pasa la clase de animación solo al eliminar la tarea
+    onDeleteTask(task.id, 'animate-fade-out');
   };
 
+  // Añade una clase adicional solo al eliminar la tarea
+  const additionalClass = isCompleted ? 'completed' : '';
+
   return (
-    <div className={`task-item-container ${colorClass} ${isCompleted ? 'completed' : ''}`}>
+    <div className={`task-item-container ${colorClass} animate-fade-in ${additionalClass} ${task.isDeleting ? 'animate-fade-out' : ''}`}>
       <span className="task-item-text">{task.name}</span>
       <div>
         <button
-          className={`complete-button ${isCompleted ? 'completed' : ''}`}
+          className={`complete-button ${additionalClass}`}
           onClick={handleCompleteClick}
         >
           ✅
