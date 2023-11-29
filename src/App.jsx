@@ -3,20 +3,22 @@ import TaskList from './components/Tasklist';
 import TaskForm from './components/Taskform';
 import './app.css';
 import Header from './components/Header';
-import '../src/components/taskitem.css';
-
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
     setTasks(storedTasks);
+    setLoading(false); // Marcar que la carga ha finalizado
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-  }, [tasks]);
+    if (!loading) {
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+  }, [tasks, loading]);
 
   const handleCompleteTask = (taskId) => {
     setTasks((prevTasks) =>
@@ -27,12 +29,7 @@ const App = () => {
   };
 
   const handleDeleteTask = (taskId) => {
-    // Agregar la clase de animación antes de eliminar la tarea
     setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
-    // Puedes realizar otras tareas, como limpiar el local storage si es necesario
-  
-    
-    
   };
 
   const handleAddTask = (newTask) => {
@@ -46,12 +43,18 @@ const App = () => {
         <div className="titulo">
           <h1>Tareas del día</h1>
         </div>
-        <TaskForm onAddTask={handleAddTask} />
-        <TaskList
-          tasks={tasks}
-          onCompleteTask={handleCompleteTask}
-          onDeleteTask={handleDeleteTask}
-        />
+        {loading ? (
+          <p>Cargando tareas...</p>
+        ) : (
+          <>
+            <TaskForm onAddTask={handleAddTask} />
+            <TaskList
+              tasks={tasks}
+              onCompleteTask={handleCompleteTask}
+              onDeleteTask={handleDeleteTask}
+            />
+          </>
+        )}
       </div>
     </div>
   );
