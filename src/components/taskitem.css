@@ -28,7 +28,7 @@ font-family: 'Source Code Pro', monospace;
   border: none;
   margin: 4px;
   padding: 8px; /* Ajusta el espacio interno del botón */
-  border: 3px solid #000; /* Cambia el color y el grosor del borde según tus preferencias */
+  border: 3px solid rgb(129, 129, 129); /* Cambia el color y el grosor del borde según tus preferencias */
   border-radius: 5px; /* Agrega bordes redondeados */
   
   
