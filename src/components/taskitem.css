@@ -15,8 +15,9 @@
 
 .task-item-text {
   margin-bottom: 8px;
-  font-family: 'Fraunces', serif;
 font-family: 'Source Code Pro', monospace;
+word-wrap: break-word;
+overflow: auto
 
 }
 

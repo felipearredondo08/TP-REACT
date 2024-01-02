@@ -37,7 +37,7 @@ const App = () => {
   };
 
   return (
-    <div className="app-wrapper">
+    <div className={`app-wrapper ${tasks.length === 0 ? 'no-tasks' : ''}`}>
       <Header />
       <div className="app-content">
         <div className="titulo">
