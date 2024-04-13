@@ -15,10 +15,15 @@ const Header = () => {
   }, [logo]);
 
   return (
+
+    <>
+    <div className='cabezera'>
     <div className={`header ${logoLoaded ? 'logo-loaded' : ''}`}>
       <img src={logo} alt="Logo de la marca" className="logo" id="logo" />
       <h1>mNEMO</h1>
     </div>
+    </div>
+    </>
   );
 };
 

@@ -1,6 +1,7 @@
 
 .task-list-container {
   margin-top: 16px;
+  
   display: flex;
   flex-wrap: wrap; /* Permite que los elementos se muevan a la siguiente línea en pantallas pequeñas */
   justify-content: space-around; /* Ajusta el espaciado entre los elementos */

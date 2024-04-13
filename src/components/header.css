@@ -1,16 +1,18 @@
 .header {
     display: flex;
     align-items: center;
+   
     
-    padding: 10px;
-    margin-bottom: -3rem;
-    margin-top: 0;
+    
+   
+   
   }
   
   .logo {
     height: 50px; /* Ajusta el tamaño del logo según tus necesidades */
     margin-right: 10px; /* Puedes ajustar el margen entre el logo y el nombre de la marca */
-    margin-left:80px;
+    margin-left: 80px;
+    
     transition: 3s;
 -moz-transition: 3s;
 -webkit-transition: 3s;
@@ -21,6 +23,7 @@
  
 
   .logo-loaded .logo{
+    
     transform:rotate(360deg);
   -ms-transform:rotate(360deg);
   -moz-transform:rotate(360deg);
@@ -36,4 +39,26 @@
   -webkit-transform:rotate(360deg);
   -o-transform:rotate(360deg);
   /* Código by @damiande */
+  }
+  
+  @media (min-width: 768px) {
+    .cabezera {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px; /* Ajusta la altura según sea necesario */
+      padding-right: 7rem;
+    }
+  }
+  .cabezera {
+    align-items: center;
+  }
+
+  @media (max-width: 767px) {
+    .cabezera {
+      padding-right: 0; /* Elimina el espacio a la derecha de la cabecera en dispositivos móviles */
+      padding-left: 0rem; /* Ajusta el espacio a la izquierda de la cabecera en dispositivos móviles */
+      
+    }
+
   }

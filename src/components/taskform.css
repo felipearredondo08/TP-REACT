@@ -1,46 +1,39 @@
 .task-form-container {
-  margin-top: 16px;
+  
   display: flex; /* Cambia esta línea */
-  flex-direction: row; /* Cambia esta línea */
+  flex-direction: col; /* Cambia esta línea */
   align-items: center;
+ 
   
   
   }
   
   .task-form-input {
-    display: inline-block;
-    width: 100%;
-    height: 4.3em;
-    
-
-    max-width: 300px; /* Limita el ancho máximo para evitar que se estire demasiado en pantallas grandes */
-    padding: 10px; /* Aumenta el padding para un mejor aspecto en pantallas más grandes */
-    margin-bottom: 16px; /* Aumenta el margen inferior para un mejor espaciado */
-    margin-left: 1rem;
-    background-color: darkgray;
-    border-radius: 0%;
-    border: solid 3px;
-    border-color: black;
-    box-sizing: border-box;
+     width: 100%; /* Ajusta el ancho al 100% del contenedor */
+  max-width: 340px; /* Limita el ancho máximo */
+  height: 4.3em;
+  padding: 10px;
+  margin-bottom: 16px;
+  background-color: rgb(229, 155, 232);
+  border-radius: 0%;
+  border: solid 3px;
+  border-color: black;
+  box-sizing: border-box;
   }
   
   .task-form-button {
     display: inline-block;
     width: auto;
     margin-bottom: 16px; /* Aumenta el margen inferior para un mejor espaciado */
-    margin-left: 1rem;
-    
-    
-    
-    
+    margin-left: 1rem;   
     max-width: 300px; /* Limita el ancho máximo para evitar que se estire demasiado en pantallas grandes */
    /* Aumenta el padding para un mejor aspecto en pantallas más grandes */
     margin-left:5px;
-    margin-right: 1rem;
-    background-color: rgb(109, 109, 109);
+   
+    background-color: rgb(139, 139, 139);
     border-radius: 0%;
     border: solid 3px;
-    border-color: rgb(158, 154, 154);
+    border-color: rgb(0, 0, 0);
     
     
   }
@@ -50,3 +43,37 @@
     font-family: 'Source Code Pro', monospace;
     font-size: 15px;
   }
+
+  
+
+  @media (min-width: 768px) { /* Ajusta el 768px según el ancho mínimo de tu notebook */
+    .task-form-container {
+      padding-left:5rem;
+    }
+  }
+
+.controles{
+  align-items: center;
+  text-align: center;
+  margin-right: 5rem;
+  
+  
+}
+
+@media (max-width: 767px) {
+  .controles{
+    align-items: center;
+    text-align: center;
+   
+    
+    margin-right: 0rem;
+  
+    
+    justify-content: center;
+   
+    
+       
+  }
+
+
+}

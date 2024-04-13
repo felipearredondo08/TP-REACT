@@ -17,11 +17,9 @@ const TaskItem = ({ task, onCompleteTask, onDeleteTask }) => {
   };
 
   const handleDeleteClick = () => {
-    // Pasa la clase de animación solo al eliminar la tarea
-    onDeleteTask(task.id, 'animate-fade-out');
+    onDeleteTask(task.id, 'animate-fade-out'); // Asegúrate de pasar la clase correcta aquí
   };
 
-  // Añade una clase adicional solo al eliminar la tarea
   const additionalClass = isCompleted ? 'completed' : '';
 
   return (

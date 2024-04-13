@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import TaskList from './components/Tasklist';
 import TaskForm from './components/Taskform';
 import './app.css';
-import Header from './components/Header';
+import Header from './components/header';
+import Footer from './components/Footer';
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
@@ -11,7 +12,7 @@ const App = () => {
   useEffect(() => {
     const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
     setTasks(storedTasks);
-    setLoading(false); // Marcar que la carga ha finalizado
+    setLoading(false);
   }, []);
 
   useEffect(() => {
@@ -37,25 +38,26 @@ const App = () => {
   };
 
   return (
-    <div className={`app-wrapper ${tasks.length === 0 ? 'no-tasks' : ''}`}>
+    <div className="app-container">
       <Header />
-      <div className="app-content">
-        <div className="titulo">
-          <h1>Tareas del día</h1>
+      <div className={`app-wrapper ${tasks.length === 0 ? 'no-tasks' : ''}`}>
+        <div className="app-content">
+          <div className="titulo"></div>
+          {loading ? (
+            <p>Cargando tareas...</p>
+          ) : (
+            <>
+              <TaskForm onAddTask={handleAddTask} />
+              <TaskList
+                tasks={tasks}
+                onCompleteTask={handleCompleteTask}
+                onDeleteTask={handleDeleteTask}
+              />
+            </>
+          )}
         </div>
-        {loading ? (
-          <p>Cargando tareas...</p>
-        ) : (
-          <>
-            <TaskForm onAddTask={handleAddTask} />
-            <TaskList
-              tasks={tasks}
-              onCompleteTask={handleCompleteTask}
-              onDeleteTask={handleDeleteTask}
-            />
-          </>
-        )}
       </div>
+      <Footer />
     </div>
   );
 };

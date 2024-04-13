@@ -17,10 +17,12 @@ const TaskForm = ({ onAddTask }) => {
   };
 
   return (
+    <div className='controles'>
     <form className="task-form-container" onSubmit={handleSubmit}>
       <input className="task-form-input" type="text" value={taskName} onChange={handleInputChange} />
       <button className="task-form-button" type="submit"><p>Agregar</p></button>
     </form>
+    </div>
   );
 };
 
