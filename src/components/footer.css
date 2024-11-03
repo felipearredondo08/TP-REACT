@@ -1,7 +1,7 @@
 .footer {
   background-color: #352833;
   color: #fff;
-  padding: 20px;
+  padding: 0px;
   text-align: center;
   position: fixed;
   bottom: 0;
@@ -9,5 +9,4 @@
   right: 0; /* Asegura que el footer esté alineado a la derecha */
   width: 100%;
   margin: 0;
-  padding: 0;
 }
